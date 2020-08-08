@@ -17,7 +17,7 @@ class DeviceTypeController extends ApiController
     {
         $this->middleware('auth:api');
     }
-    
+
     public function index()
     {
         return $this->get();
@@ -31,23 +31,23 @@ class DeviceTypeController extends ApiController
     public function store(DeviceTypeRequest $request)
     {
 
-            $authorize = $request->header('Authorization');
+        // $authorize = $request->header('Authorization');
 
-            $client = new \GuzzleHttp\Client();
-            $response = $client->post("http://localhost:8000/api/auth/me", [
-                'headers' => [
-                    'Authorization' => $authorize
-                ],
-                'form_params' => ['body' =>  '']
-            ]);
-            // $response = $client->get("http://apps.orchtech.com:81/law5/api/section");
-    
-            return  $response->getBody();
-            return responseSuccess($response);
-        
-        // $request = $request->all();
-        // $request['user_id'] = 1;
-        // return $this->add($request);        
+        // $client = new \GuzzleHttp\Client();
+        // $response = $client->post("http://localhost:8000/api/auth/me", [
+        //     'headers' => [
+        //         'Authorization' => $authorize
+        //     ],
+        //     'form_params' => ['body' =>  '']
+        // ]);
+        // // $response = $client->get("http://apps.orchtech.com:81/law5/api/section");
+
+        // return  $response->getBody();
+        // return responseSuccess($response);
+
+        $request = $request->all();
+        $request['user_id'] = auth('api')->user()->id;
+        return $this->add($request);
     }
 
     public function show($id)
@@ -62,9 +62,9 @@ class DeviceTypeController extends ApiController
 
     public function update(DeviceTypeRequest $request, $id)
     {
-        return $this->put($request ,$id);
+        return $this->put($request, $id);
     }
-    
+
     public function destroy($id)
     {
         return $this->remove($id);
