@@ -28,8 +28,7 @@ class DeviceRequest extends FormRequest
 
                 return [
                     "pc_number" => "required|numeric|min:1",
-                    "device_type_id" =>  "required|numeric|min:1",
-                    "user_id" => "required|numeric|min:1"
+                    "device_type_id" =>  "required|numeric|min:1"
                 ];
 
                 break;
