@@ -45,8 +45,6 @@ class DeviceTypeController extends ApiController
         // return  $response->getBody();
         // return responseSuccess($response);
 
-        $request = $request->all();
-        $request['user_id'] = auth('api')->user()->id;
         return $this->add($request);
     }
 

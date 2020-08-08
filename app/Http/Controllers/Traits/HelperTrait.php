@@ -44,6 +44,9 @@ trait HelperTrait
     public function add($request)
     {
         $model = self::MODEL;
+        
+        $request = $request->all();
+        $request['user_id'] = auth('api')->user()->id;
         $data = $model::create($request);
 
         if (empty($data)) {
