@@ -27,8 +27,7 @@ class GameTypeRequest extends FormRequest
             case 'POST':
 
                 return [
-                    "key" =>  "required",
-                    "user_id" => "required|numeric|min:1"
+                    "key" =>  "required"
                 ];
 
                 break;

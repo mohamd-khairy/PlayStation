@@ -30,21 +30,6 @@ class DeviceTypeController extends ApiController
 
     public function store(DeviceTypeRequest $request)
     {
-
-        // $authorize = $request->header('Authorization');
-
-        // $client = new \GuzzleHttp\Client();
-        // $response = $client->post("http://localhost:8000/api/auth/me", [
-        //     'headers' => [
-        //         'Authorization' => $authorize
-        //     ],
-        //     'form_params' => ['body' =>  '']
-        // ]);
-        // // $response = $client->get("http://apps.orchtech.com:81/law5/api/section");
-
-        // return  $response->getBody();
-        // return responseSuccess($response);
-
         return $this->add($request);
     }
 
