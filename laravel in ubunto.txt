@@ -1,0 +1,14 @@
+1- sudo apt-get update
+2- sudo apt-get install apache2
+3- sudo apt-get install php7.4
+4- sudo apt-get install mysql-server
+4- mysql_secure_installation
+5- sudo apt-get install phpmyadmin
+6- mysql;
+7- CRATE USER 'username'@localhost IDENTIGIED BY 'password';
+8- GRANTE ALL PRIVILEGES ON *.* TO 'username'@localhost WITH GRANT OPTION;
+8- sudo apt-get install php7.4-bcmath php7.4-mbstring php-xml php-zip unzip curl nano
+9- install composer "get the command from composer website"(4 commands)
+10- mv composer.phar /usr/local/bin/composer   ; composer -v
+11- composer global require laravel/installer
+12- nano .bashrc add envoroment show in video
